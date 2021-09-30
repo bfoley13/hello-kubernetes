@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-ingress
+spec:
+  rules:
+  - host: myservice.com
+    http:
+      paths:
+      - path: /
+        pathType: prefix
+        backend:
+          service:
+            name: hello-kubernetes-hello-kubernetes
+            port:
+              number: 80
+      - path: <URL_PATH>
+        pathType: <PATH_TYPE>
+        backend:
+          service:
+            name: <SERVICE_NAME>
+            port:
+              number: <SERVICE_PORT>
